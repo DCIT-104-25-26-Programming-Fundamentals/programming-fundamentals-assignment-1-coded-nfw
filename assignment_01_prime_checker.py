@@ -34,4 +34,23 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+def is_prime(number):
+    if number < 2:
+        return False
+    
+    i = 2
+    while i * i <= number:
+        if number % i == 0:
+            return False
+        i += 1
+        
+    return True
 
+
+if __name__ == "__main__":
+    user_input = int(input("Enter a number: "))
+    
+    if is_prime(user_input):
+        print(f"{user_input} is a prime number.")
+    else:
+        print(f"{user_input} is NOT a prime number.")
