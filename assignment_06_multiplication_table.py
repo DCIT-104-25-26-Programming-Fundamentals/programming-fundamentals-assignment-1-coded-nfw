@@ -55,3 +55,56 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def print_table(n):
+    """
+    Prints the multiplication table for a given number 'n' from 1 to 12.
+    """
+    print(f"Multiplication Table for {n}:")
+    for i in range(1, 13):
+        print(f"{n} x {i:<2} = {n * i}")
+
+
+def single_table():
+    """
+    PART A: Prompts the user for a single number and prints its table.
+    """
+    user_input = input("Enter a positive integer for Part A: ")
+
+    if not user_input.isdigit() or int(user_input) <= 0:
+        print("Error: Please enter a valid positive integer.")
+        return
+
+    number = int(user_input)
+    print_table(number)
+
+
+def multiple_tables():
+    """
+    PART B (Bonus): Prompts for a number N and prints all tables from 1 to N.
+    """
+    user_input = input("Enter N (positive integer) for Part B: ")
+
+    if not user_input.isdigit() or int(user_input) <= 0:
+        print("Error: Please enter a valid positive integer.")
+        return
+
+    n = int(user_input)
+    for i in range(1, n + 1):
+        print_table(i)
+        if i < n:
+            print("-" * 27)
+
+
+def main():
+    """
+    Main function to run both parts of the assignment.
+    """
+    print("=== PART A: Single Table ===")
+    single_table()
+
+    print("\n=== PART B: Tables from 1 to N ===")
+    multiple_tables()
+
+
+if __name__ == "__main__":
+    main()
